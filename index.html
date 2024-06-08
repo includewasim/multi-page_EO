@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even Odd</title>
+    <style>
+        *{
+            font-size: 40px;
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+        body{
+            background-color: #EDEADE;
+        
+        }
+
+        #nav{
+          
+            top: 0px;
+            background-color: black;
+            height:50px;
+        }
+        #nav a{
+            color: white;
+            text-decoration: none;
+            margin: 20%;
+        }
+        #nav a:hover {
+            border-bottom: 2px solid;
+        }
+       
+    </style>
+</head>
+<body>
+    
+    <center>
+        <div id="nav">
+            <a href="#">Home</a>
+            <a href="aboutus.html">About Us</a>
+        </div>
+    <h1>Even Odd App</h1>
+
+    <form onsubmit="find()">
+        <label for="num">Enter Number</label>
+        <input type="number" placeholder="Only Integer" id="num">
+        <br><br>
+        <input type="submit" value="Find">
+    </form>
+    <h2 id="msg"></h2>
+</center>
+    <script>
+        function find()
+        {
+            event.preventDefault();
+            let num=document.getElementById("num");
+            let msg=document.getElementById("msg");
+            let ans=""
+
+            if(num.value=="")
+            {
+                alert("Please Enter Number First");
+                msg.innerHTML="";
+                num.focus();
+                return;
+            }
+
+            else {
+                ans=num.value%2==0?"Even":"Odd";
+            }
+            msg.innerHTML=ans;
+        }
+    </script>
+</body>
+</html>
